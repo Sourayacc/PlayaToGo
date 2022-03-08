@@ -5,5 +5,5 @@ class Beach < ApplicationRecord
   validates :address, presence: true
   validates :title, presence: true
   validates :price, presence: true
-  validates :description
+  validates :description, presence: true
 end
