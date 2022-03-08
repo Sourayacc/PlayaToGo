@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @beach.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @beach.description %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @beach.address %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @beach.price %>
+</p>
+
+<p>
+  <strong>Lunch:</strong>
+  <%= @beach.lunch %>
+</p>
+
+
+
+<h2> Je reserve ! </h2>
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+    <li><%= review.content %> <%= link_to "Delete", review_path(review), method: :delete, data: { confirm: "Are your Sure ?" } %> </li>
+
+  <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_beach_path(@beach) %> |
+<%= link_to 'Back', beaches_path %>
+<%= link_to 'Destroy', beaches_path %>
