@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Photo</th>
       <th>Title</th>
       <th>Description</th>
       <th>Address</th>
@@ -19,8 +20,9 @@
       <tr>
         <div class="card">
           <div class="card-description">
-            <p><strong id="title"><%= beach.title %></strong></p>
-            <p><%= beach.description %></p>
+          <td><%= cl_image_tag beach.photo.key, width: 200, height: 100, crop: :fill %></td>
+            <td><strong id="title"><%= beach.title %></strong></td>
+            <td><%= beach.description %></td>
             <td><%= beach.address %></td>
             <td><%= beach.lunch %></td>
           </div>
