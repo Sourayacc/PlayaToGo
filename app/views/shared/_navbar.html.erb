@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+      <%= image_tag "https://img.freepik.com/vecteurs-libre/modele-logo-plage-ete_441059-37.jpg" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,8 +26,9 @@
             </div>
           </li>
         <% else %>
-          <li class="nav-item">
+          <li class="nav-item container-sign-up-login">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Sign-up", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
       </ul>
