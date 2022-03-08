@@ -24,29 +24,35 @@ beach = Beach.create!(title: "Trou aux biches",
 beach.photo.attach(io: file, filename: 'trou-aux-biches-plage-maurice.jpg', content_type: 'image/jpg')
 puts(beach.title, beach.user.first_name)
 
-
-beach = Beach.create!(title: "Mont Choisi",
+file = URI.open('https://www.mackoo.com/maurice/images/IMGP0278.jpg')
+beach = Beach.create!(title: "Mont Choisy",
   description: "Plage mignonne, eau bien transparence, on peut y ramasser des coquillages",
-  address: "route royale, Mont Choisi",
+  address: "route royale, Mont Choisy",
   price: "Rs5000",
   user: new_user)
   puts(beach.title, beach.user.first_name)
+  beach.photo.attach(io: file, filename: 'IMGP0278.jpg', content_type: 'image/jpg')
 
 new_user = User.create!(first_name: "Souraya",
   last_name: "Cassam Chenai",
   email: "sourayacc@gmail.com",
   password: "password"
 )
+
+file = URI.open('https://previews.123rf.com/images/jbkrcmar/jbkrcmar1310/jbkrcmar131000065/23199321-playa-en-la-isla-mauricio-tamarin.jpg')
 beach = Beach.create!(title: "Tamarin Bay",
 description: "Jolie Plage plein d'ambiance, vendeur de boulettes et de glaçons râpés",
 address: "route royale, Tamarin",
 price: "Rs5000",
 user: new_user)
 puts(beach.title, beach.user.first_name)
+beach.photo.attach(io: file, filename: '23199321-playa-en-la-isla-mauricio-tamarin.jpg', content_type: 'image/jpg')
 
+file = URI.open('https://www.ile-maurice.fr/images/articles/2014/morne-paradis.jpg')
 beach = Beach.create!(title: "Le Morne",
   description: "Grande et Jolie plage, plein d'ombres avec les filao",
   address: "route royale, Le Morne",
   price: "Rs10000",
   user: new_user)
   puts(beach.title, beach.user.first_name)
+  beach.photo.attach(io: file, filename: 'morne-paradis.jpg', content_type: 'image/jpg')
