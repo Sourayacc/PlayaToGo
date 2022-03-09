@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-12">
+    <div class="col-6">
       <div class="card-trip">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="photo-beach"><%= cl_image_tag @beach.photo.key, width: 200, height: 100, crop: :fill %></div>
         <div class="card-trip-infos">
         <p>
           <strong>Name:</strong>
@@ -35,6 +35,7 @@
     </div>
   </div>
 </div>
+<%= render :partial => 'bookings/form_booking' %>
 
 
 <%= link_to 'Back', beaches_path %>

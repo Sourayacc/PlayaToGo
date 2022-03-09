@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @beach = Beach.find(params[:beach_id])
     @booking = Booking.new
   end
 
