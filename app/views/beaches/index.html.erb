@@ -1,31 +1,33 @@
-<h1 class="text-center">Find your <strong>Dream</strong> Beach!</h1>
+<%# <div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    Breakfast
+  </div>
 
-<div class="container-fluid">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+    Lunch
+  </div>
 
-  <div class="col-sm-7">
-    <div class="row">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+    Dinner
+  </div>
+</div> %>
+
+<div class="container">
+  <div class="card-container">
+    <div class="cards">
       <% @beaches.each do |beach| %>
-        <div class="col-xs col-sm-6">
-            <div class="card-container">
-              <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path beach.photo.key, width: 400, height: 300, crop: :fill %>');">
-                <div class="card">
-                  <%= cl_image_tag beach.photo.key, width: 50, height: 50, crop: :fill, gravity: :face, class: "card-user avatar" %>
-                    <div class="card-description">
-                      <p><%=beach.title%></p>
-                    </div> <!-- fin card-description -->
-                    <div class="card-price">
-                      <h2><%=beach.price%>Rs</h2>
-                    </div> <!-- fin card-price -->
-                  </div> <!-- fin card -->
-              </div> <!-- fin card-image -->
-          <p><strong id="city"><%=beach.address%></p>
+        <div class="card">
+          <p><%=beach.title%></p>
+          <div class="flex-card">
           <p><%=beach.description%></p>
+          <p><%=beach.price%></p>
           <%= link_to 'Show', beach %>
-          <%= link_to 'Edit', edit_beach_path(beach) %>
-          <%= link_to 'Destroy', beach, method: :delete, data: { confirm: 'Are you sure?' } %>
-              </div> <!-- fin card-container -->
-        </div> <!-- fin de col -->
+          </div>
+        </div>
       <% end %>
-    </div>  <!-- fin du row -->
-  </div> <!-- fin du col-sm-7 -->
+    </div>
+  </div>
+  <div id="map">
+    <img src="https://www.clickz.com/wp-content/uploads/2016/03/airbnb-search-map.png">
+  </div>
 </div>
