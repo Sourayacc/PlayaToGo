@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-show-beach">
   <div class="beach-card justify-content-between d-flex ">
     <div class="card-product d-flex justify-content-between mt-5">
       <div class=""><%= cl_image_tag @beach.photo.key, width: 100, height: 50, crop: :fill %></div>
@@ -6,26 +6,31 @@
         <h2>
           <strong><%= @beach.title %></strong>
         </h2>
-        <p>
+        <h4>
           <%= @beach.description %>
-        </p>
+        </h4>
         <p>
           <%= @beach.address %>
         </p>
+        <span class="badge badge-warning">
         <p>
           <%= @beach.price %>
         </p>
+        </span>
         <p>
           <% if @beach.lunch %>
             <p>Lunch available</p>
           <% end %>
         </p>
         </div>
+        </div>
+        <div class="booking-form mt-5">
+        <h4>Bookings</h4>
+        <%= render :partial => 'bookings/form_booking' %>
       </div>
-    <%= render :partial => 'bookings/form_booking' %>
     </div>
   </div>
 </div>
-
-
-<%= link_to 'Back', beaches_path %>
+  <div class="btn-back">
+    <%= link_to 'Back', beaches_path, class:"btn btn-secondary"%>
+  </div>
