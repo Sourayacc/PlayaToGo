@@ -15,12 +15,15 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @beach = Beach.find(params[:beach_id])
     @booking = Booking.new(booking_params)
 
+    @booking.user_id = current_user.id
+    @booking.beach_id = @beach.id
     if @booking.save
-      redirect_to @booking, notice: 'Your reservation has been successfully created.'
+      redirect_to bookings_path, notice: 'Your reservation has been successfully created.'
     else
-      render :new
+      redirect_to beach_path(@beach)
     end
   end
 
