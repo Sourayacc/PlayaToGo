@@ -1,5 +1,6 @@
 .beach-card {
   height: 350px;
+  margin: 35px;
 }
 
 .justify-content-between {
@@ -19,14 +20,16 @@
   align-items: center;
   margin-top: 16px;
   border-radius: 10px;
+  width: 50%;
 
   & img {
     height: 250px;
-    width: 400px;
+    width: 250px;
     -o-object-fit: cover;
     object-fit: cover;
     padding-left: 16px;
     background-size: cover;
+    border: 5px solid transparent;
   }
 }
 
@@ -36,4 +39,14 @@
 
 .text-end {
   text-align: left !important;
+}
+
+.booking-form {
+  width: 45%;
+}
+
+.btn-back {
+  position: relative;
+  bottom: 40px;
+  left: 40px;
 }
