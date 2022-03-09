@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Beaches</h1>
+<h1 class="text-center">Find your <strong>Dream</strong> Beach!</h1>
 
 <table>
   <thead>
     <tr>
+      <th>Photo</th>
       <th>Title</th>
       <th>Description</th>
       <th>Address</th>
@@ -17,11 +18,19 @@
   <tbody>
     <% @beaches.each do |beach| %>
       <tr>
-        <td><%= beach.title %></td>
-        <td><%= beach.description %></td>
-        <td><%= beach.address %></td>
-        <td><%= beach.price %></td>
-        <td><%= beach.lunch %></td>
+        <div class="card">
+          <div class="card-description">
+          <td><%= cl_image_tag beach.photo.key, width: 200, height: 100, crop: :fill %></td>
+            <td><strong id="title"><%= beach.title %></strong></td>
+            <td><%= beach.description %></td>
+            <td><%= beach.address %></td>
+            <td><%= beach.lunch %></td>
+          </div>
+          <div class="card-price">
+            <h2> <%= beach.price %> €</h2>
+          </div>
+        </div>
+
         <td><%= link_to 'Show', beach %></td>
         <td><%= link_to 'Edit', edit_beach_path(beach) %></td>
         <td><%= link_to 'Destroy', beach, method: :delete, data: { confirm: 'Are you sure?' } %></td>

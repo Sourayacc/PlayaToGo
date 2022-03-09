@@ -1,5 +1,6 @@
 class BeachesController < ApplicationController
   before_action :set_beach, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only:  :index
 
   # GET /beaches
   def index

@@ -1,9 +1,10 @@
 class Beach < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
+  has_one_attached :photo
 
   validates :address, presence: true
   validates :title, presence: true
   validates :price, presence: true
-  validates :description
+  validates :description, presence: true
 end
