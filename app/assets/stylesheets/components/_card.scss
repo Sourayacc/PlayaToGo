@@ -1,112 +1,40 @@
-.cards {
-  margin: 20px 15px;
-  // margin-top: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
-
+.container {
+  display: flex;
+  justify-items: stretch;
 }
 
-.card-category {
+.flex-card {
+  display: flex;
+  align-content: space-between;
+}
+
+.card {
   background-size: cover;
   background-position: center;
   height: 150px;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-around;
+  font-size: 22px;
   color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  position: relative;
+  font-weight: bolder;
+  // text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
 
-.card-image {
-  height: 175px;
-  background-size: cover !important;
-  position: relative;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  color: white;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  image-position: center;
-  background-position: center;
-
+.cards {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  padding: 16px;
 }
 
-.card-first-name {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 15px;
-  text-transform: uppercase;
-}
-.card-description {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  padding-bottom: 10px;
-}
-.card-description h2 {
-  font-size: 20px;
-}
-.card-description p {
-  font-size: 13px;
-}
-
-.card-user {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-}
-
-.card-price {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: black;
-}
-
-#city {
-  color: black;
-}
-
-.card-price h2{
-  font-size: 20px;
-  margin-top: 10px;
-  color: black;
-}
-
-.card-container {
-  box-shadow: 2px 4px 5px #E8F1F5;
-  border-radius: 4px;
-}
-
-.card-container:hover{
-  opacity: 0.5;
-}
-
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }
 
 // Large devices (desktops, 992px and up)
