@@ -1,39 +1,39 @@
-.card-trip {
+.beach-card {
+  height: 350px;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.card-product {
   overflow: hidden;
+  height: 280px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-
-}
-
-.card-trip > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.card-trip h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-trip p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
-
-.card-trip .card-trip-infos {
-  padding: 16px;
+  box-shadow: 0px 0px 20px -4px rgba(70,70,70,0.86);
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+  align-items: center;
+  margin-top: 16px;
+  border-radius: 10px;
+
+  & img {
+    height: 250px;
+    width: 400px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    padding-left: 16px;
+    background-size: cover;
+  }
 }
 
-// .card-trip .photo-beach {
-//   padding: 0px;
-// }
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.text-end {
+  text-align: left !important;
+}
