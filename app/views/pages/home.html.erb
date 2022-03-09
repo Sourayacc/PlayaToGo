@@ -2,28 +2,22 @@
   <div class="container">
     <h1 class="text-center">Laissez-vous guider par votre curiosité !</h1>
     <p></p>
-    <a class="btn btn-flat btn-primary btn-lg btn-block" href="#">Reserver votre plage</a>
+    <%= link_to "Reserver votre plage", beaches_path, class: "btn btn-flat btn-primary btn-lg btn-block" %>
+    <%= link_to "Ajouter une plage", new_beach_path, class: "btn btn-outline-primary btn-lg" %>
+    <%# <a class="btn btn-flat btn-primary btn-lg btn-block" href="#">Reserver votre plage</a>
+    <a type="button" class="btn btn-outline-primary btn-lg" href="#" >Ajouter une plage</a> %>
   </div>
 </div>
 
-<div>
-  <h2>Découvrez les expériences Playa2Go </h2>
-</div>
-
-<div class="cards">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    North
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    South
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    East
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    West
+<div class="footer">
+  <div class="footer-links">
+    <a href="https://github.com/"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> by The Capitain
   </div>
 </div>
