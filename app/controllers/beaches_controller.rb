@@ -23,6 +23,7 @@ class BeachesController < ApplicationController
   # POST /beaches
   def create
     @beach = Beach.new(beach_params)
+    @beach.user = current_user
     if @beach.save
       redirect_to @beach, notice: 'Beach was successfully created.'
     else
@@ -52,6 +53,6 @@ class BeachesController < ApplicationController
   end
 
   def beach_params
-    params.require(:beach).permit(:address, :title, :price, :description, :lunch)
+    params.require(:beach).permit(:address, :title, :price, :description, :photo, :lunch)
   end
 end

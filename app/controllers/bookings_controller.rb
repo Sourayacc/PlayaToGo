@@ -18,8 +18,8 @@ class BookingsController < ApplicationController
     @beach = Beach.find(params[:beach_id])
     @booking = Booking.new(booking_params)
 
-    @booking.user_id = current_user.id
-    @booking.beach_id = @beach.id
+    @booking.user = current_user
+    @booking.beach = @beach
     if @booking.save
       redirect_to bookings_path, notice: 'Your reservation has been successfully created.'
     else
