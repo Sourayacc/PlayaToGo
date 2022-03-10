@@ -1,0 +1,5 @@
+<div>
+  <h4> <%= link_to beach.title, beach %> </h4>
+  <p class="content"> <%= beach.description %></p>
+  <%= cl_image_tag beach.photo.key, width: 100, height: 50, crop: :fill, class: "img-center" %>
+</div>

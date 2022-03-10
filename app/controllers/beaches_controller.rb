@@ -5,6 +5,15 @@ class BeachesController < ApplicationController
   # GET /beaches
   def index
     @beaches = Beach.all
+
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    @markers = @beaches.geocoded.map do |beach|
+      {
+        lat: beach.latitude,
+        lng: beach.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { beach: beach })
+      }
+    end
   end
 
   # GET /beaches/1
