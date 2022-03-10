@@ -57,5 +57,5 @@ beach = Beach.create!(title: "Le Morne",
   puts(beach.title, beach.user.first_name)
   beach.photo.attach(io: file, filename: 'morne-paradis.jpg', content_type: 'image/jpg')
 
-booking = Booking.create!(starting_date: "10-03-2022", ending_date: "20-03-2022", user: new_user, beach: beach)
+booking = Booking.create!(starting_date: "10-03-2022", ending_date: "20-03-2022", user: new_user, beach: beach, status: "en attente")
 puts(booking)
