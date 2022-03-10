@@ -15,9 +15,9 @@ new_user = User.create!(first_name: "Antoine",
                         password: "password"
                       )
 file = URI.open('https://www.tropicalement-votre.com/dests/maurice/trou-aux-biches-plage-maurice.jpg')
-beach = Beach.create!(title: "Trou aux biches",
+beach = Beach.create!(title: "Trou-aux-Biches",
             description: "Jolie Plage ensoleillée, avec des filaos qui donnent de l'ombre, on peut y trouver des tortues de mer",
-            address: "route royale, Trou au Biches",
+            address: "Trou-aux-Biches, mauritius",
             price: "Rs8000",
             user: new_user)
 
@@ -27,7 +27,7 @@ puts(beach.title, beach.user.first_name)
 file = URI.open('https://www.mackoo.com/maurice/images/IMGP0278.jpg')
 beach = Beach.create!(title: "Mont Choisy",
   description: "Plage mignonne, eau bien transparence, on peut y ramasser des coquillages",
-  address: "route royale, Mont Choisy",
+  address: "mont choisy, mauritius",
   price: "Rs5000",
   user: new_user)
   puts(beach.title, beach.user.first_name)
@@ -51,7 +51,7 @@ beach.photo.attach(io: file, filename: '23199321-playa-en-la-isla-mauricio-tamar
 file = URI.open('https://www.ile-maurice.fr/images/articles/2014/morne-paradis.jpg')
 beach = Beach.create!(title: "Le Morne",
   description: "Grande et Jolie plage, plein d'ombres avec les filao",
-  address: "route royale, Le Morne",
+  address: "Le morne, mauritius",
   price: "Rs10000",
   user: new_user)
   puts(beach.title, beach.user.first_name)

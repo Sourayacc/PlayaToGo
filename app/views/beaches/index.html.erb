@@ -1,33 +1,39 @@
-<%# <div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Breakfast
-  </div>
+<div class="container-beaches">
+  <div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Lunch
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    Dinner
-  </div>
-</div> %>
-
-<div class="container">
-  <div class="card-container">
-    <div class="cards">
-      <% @beaches.each do |beach| %>
-        <div class="card">
-          <p><%=beach.title%></p>
-          <div class="flex-card">
-          <p><%=beach.description%></p>
-          <p><%=beach.price%></p>
-          <%= link_to 'Show', beach %>
+    <% @beaches.each do |beach| link_to beach %>
+      <%= link_to beach_path(beach), class: "text-decoration-none" do %>
+        <div class="container-index-beach">
+          <div class="beach-card-index justify-content-between-index">
+            <div class="card-product-index">
+              <div class=""><%= cl_image_tag beach.photo.key, crop: :fill %></div>
+                <div class="card-product-infos text-end">
+                <h2>
+                  <strong><%= beach.title %></strong>
+                </h2>
+                <h4 >
+                  <%= beach.description %>
+                </h4>
+                <p>
+                  <%= beach.address %>
+                </p>
+                <span class="badge badge-warning">
+                <p>
+                  <%= beach.price %>
+                </p>
+                </span>
+              </div>
+              </div>
           </div>
         </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
-  <div id="map">
-    <img src="https://www.clickz.com/wp-content/uploads/2016/03/airbnb-search-map.png">
+  <div id="map" style="width: 75%">
+     <div class="map" style="width: 100%;"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
   </div>
 </div>

@@ -1,0 +1,39 @@
+.container-beaches {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 20px;
+}
+
+.container-index-beach {
+  width: 95%;
+}
+
+.justify-content-between-index {
+  justify-content: space-between !important;
+}
+
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.card-product-index {
+  overflow: hidden;
+  height: 280px;
+  background: white;
+  box-shadow: 0px 0px 20px -4px rgba(70,70,70,0.86);
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  border-radius: 10px;
+
+  & img {
+    height: 250px;
+    width: 250px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    padding-left: 16px;
+    background-size: cover;
+    border: 5px solid transparent;
+  }
+}
