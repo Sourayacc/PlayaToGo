@@ -1,14 +1,10 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.terre.tv/wp-content/uploads/2020/05/plus-belles-plages-cuba.jpg);">
   <div class="container">
-    <h1 class="text-center">Laissez-vous guider par votre curiosité !</h1>
-    <p></p>
+    <h1 data-controller="typed-js" class= "text-center"></h1>
     <%= link_to "Reserver votre plage", beaches_path, class: "btn btn-flat btn-primary btn-primary-color-playa btn-lg btn-block" %>
     <%= link_to "Ajouter une plage", new_beach_path, class: "btn btn-outline-light btn-lg" %>
-    <%# <a class="btn btn-flat btn-primary btn-lg btn-block" href="#">Reserver votre plage</a>
-    <a type="button" class="btn btn-outline-primary btn-lg" href="#" >Ajouter une plage</a> %>
   </div>
 </div>
-
 <div class="container">
   <div class="row">
     <%= link_to beaches_path, class: "link-home" do %>
