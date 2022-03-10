@@ -1,14 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="text-center">Your <strong>bookings</strong></h1>
+
 
 
 
   <body class = "container-booking">
-    <% @bookings.each do |booking| %>
+    <h2 class="text-center">Your <strong>bookings</strong></h2>
+    <% @bookings.reverse_each do |booking| %>
+      <% if booking.user_id == current_user.id %>
+      <div class="row div-center">
+        <div class="card-product">
 
-        <div class="card-product div-center">
-            <% if booking.user_id == current_user.id %>
             <%= cl_image_tag booking.beach.photo.key, width: 200, height: 200, crop: :fill %>
             <div>
               <div class="d-flex justify-content-between align-items-center">
@@ -23,12 +25,63 @@
                   <p><strong>Ending Date</strong></p>
                   <p><%= booking.ending_date %></p>
                 </div>
+                <div class="card-margin button-status">
+                  <p><strong>Status</strong></p>
+                  <p><%= booking.status %></p>
+                </div>
               </div>
-            <% end %>
+
             </div>
         </div>
+
+      </div>
+      <% end %>
     <% end %>
-  <tbody>
+
+
+    <% if @beaches  %>
+    <% affich = true %>
+
+      <% @beaches.each do |beach| %>
+        <% @bookings_of_beach = beach.bookings %>
+        <% @bookings_of_beach.reverse_each do |booking| %>
+          <% if booking.status == "en attente" %>
+          <% if affich == true %>
+          <h2 class="text-center">Bookings to be Treated</h2>
+            <% affich = false %>
+          <% end %>
+          <div class="row div-center">
+              <div class="card-product">
+
+                  <%= cl_image_tag booking.beach.photo.key, width: 200, height: 200, crop: :fill %>
+                  <div>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="card-margin">
+                      <h2><strong id="title"><%= booking.beach.title %></strong></h2>
+                      </div>
+                      <div class="card-margin">
+                        <p><strong>Starting Date</strong></p>
+                        <p><%= booking.starting_date %></p>
+                      </div>
+                      <div class="card-margin">
+                        <p><strong>Ending Date</strong></p>
+                        <p><%= booking.ending_date %></p>
+                      </div>
+                      <div>
+                          <%= link_to 'Accept', accept_booking_path(booking),method: :patch, class:"btn btn-success btn-sm" %>
+                          <%= link_to 'Decline', decline_booking_path(booking),method: :patch, class:"btn btn-info btn-sm" %>
+                        </div>
+                    </div>
+
+                  </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end  %>
+
+  </body>
 
 <br>
 <%= link_to 'Back', beaches_path, class:"btn btn-secondary" %>

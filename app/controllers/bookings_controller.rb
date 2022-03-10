@@ -1,8 +1,10 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  before_action :set_booking, only: [:show, :edit, :update, :destroy, :accept, :decline]
 
   def index
     @bookings = Booking.all
+    user = current_user
+    @beaches = user.beaches
   end
 
   def show
@@ -20,6 +22,7 @@ class BookingsController < ApplicationController
 
     @booking.user = current_user
     @booking.beach = @beach
+    @booking.status = "en attente"
     if @booking.save
       redirect_to bookings_path, notice: 'Your reservation has been successfully created.'
     else
@@ -41,6 +44,26 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
     redirect_to bookings_url, notice: 'Your reservation was successfully destroyed.'
+  end
+
+  def accept
+    @booking.status = "confirmed"
+    if @booking.save
+      redirect_to bookings_path, notice: 'Your reservation has been successfully confirmed.'
+    else
+      redirect_to bookings_path
+    end
+
+  end
+
+  def decline
+    @booking.status = "declined"
+    if @booking.save
+      redirect_to bookings_path, notice: 'Your reservation has been successfully declined.'
+    else
+      redirect_to bookings_path
+    end
+
   end
 
 
