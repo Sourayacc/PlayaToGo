@@ -2,7 +2,7 @@
   <div class="container">
     <h1 class="text-center">Laissez-vous guider par votre curiosité !</h1>
     <p></p>
-    <%= link_to "Reserver votre plage", beaches_path, class: "btn btn-flat btn-primary btn-lg btn-block" %>
+    <%= link_to "Reserver votre plage", beaches_path, class: "btn btn-flat btn-primary btn-primary-color-playa btn-lg btn-block" %>
     <%= link_to "Ajouter une plage", new_beach_path, class: "btn btn-outline-light btn-lg" %>
     <%# <a class="btn btn-flat btn-primary btn-lg btn-block" href="#">Reserver votre plage</a>
     <a type="button" class="btn btn-outline-primary btn-lg" href="#" >Ajouter une plage</a> %>
@@ -11,27 +11,31 @@
 
 <div class="container">
   <div class="row">
-    <div class="col card-product">
-      1 of 2
-    </div>
-    <div class="col">
-      2 of 2
-    </div>
+    <%= link_to beaches_path, class: "link-home" do %>
+      <div class="col card-product-home background-image-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/9470498/pexels-photo-9470498.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
+        <h4 class="text-center-home">Find<br>the beach <br>of your dreams!</h4>
+      </div>
+    <% end %>
+    <%= link_to beaches_path, class: "link-home" do %>
+      <div class="col card-product-home background-image-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://sylvanbeachny.com/wp-content/uploads/2017/02/iStock-511068978-768x512.jpg);">
+        <h4 class="text-center-home">Have <br>the time<br> of your life!</h4>
+      </div>
+    <% end %>
   </div>
   <div class="row">
-    <div class="col">
-      1 of 3
+    <div class="col card-product-home" style="background-color:rgb(120, 176, 186)">
+      <h4>PLAYA<br>TO  GO </h4>
     </div>
-    <div class="col">
-      2 of 3
+    <div class="col card-product-home" style="background-color:rgb(183, 225, 207)">
+      <h4>JUST</h4>
     </div>
-    <div class="col">
-      3 of 3
+    <div class="col card-product-home" style="background-color:rgb(158, 208, 230)">
+      <h4>FOR YOU</h4>
     </div>
   </div>
 </div>
 
-<div class="footer">
+<div class="footer" style="background-color:rgba(0, 0, 0, 0.1)">
   <div class="footer-links">
     <a href="https://github.com/"><i class="fab fa-github"></i></a>
     <a href="#"><i class="fab fa-instagram"></i></a>
