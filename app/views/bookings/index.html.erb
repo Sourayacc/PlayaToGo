@@ -7,7 +7,7 @@
   <body class = "container-booking">
     <% @bookings.each do |booking| %>
 
-        <div class="card-product">
+        <div class="card-product div-center">
             <% if booking.user_id == current_user.id %>
             <%= cl_image_tag booking.beach.photo.key, width: 200, height: 200, crop: :fill %>
             <div>
@@ -31,4 +31,4 @@
   <tbody>
 
 <br>
-<%= link_to 'Back', beaches_path %>
+<%= link_to 'Back', beaches_path, class:"btn btn-secondary" %>
