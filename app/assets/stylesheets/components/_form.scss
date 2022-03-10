@@ -1,0 +1,30 @@
+.form-button {
+  text-align: right;
+  align-items: center;
+  padding: 5px;
+}
+.form-button-back {
+  text-align: right;
+  align-items: center;
+  padding: 5px;
+}
+.container-form {
+  width: 700px;        /* Set the width */
+  margin: 0 auto;
+  text-align: left;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: 1px solid #E7E7E7;
+  border-radius: 8px;
+  margin-top: 15px;
+  padding: 20px;
+}
+.form-title {
+  height: 3.5rem;
+  border: 1px solid #E7E7E7;
+  text-align: center;
+  align-items: center;
+  background-color: rgb(236, 239, 245);
+  padding: 10px;
+  margin-bottom: 10px;
+}

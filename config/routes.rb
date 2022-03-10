@@ -5,5 +5,10 @@ Rails.application.routes.draw do
   resources :beaches do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:index, :show, :destroy, :edit, :update]
+  resources :bookings, only: [:index, :show, :destroy, :edit, :update] do
+    member do
+      patch :accept
+      patch :decline
+    end
+  end
 end
