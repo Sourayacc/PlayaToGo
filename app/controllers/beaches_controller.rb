@@ -19,7 +19,6 @@ class BeachesController < ApplicationController
   # GET /beaches
   def index
     @beaches = Beach.all
-
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @beaches.geocoded.map do |beach|
       {
@@ -27,6 +26,12 @@ class BeachesController < ApplicationController
         lng: beach.longitude,
         info_window: render_to_string(partial: "info_window", locals: { beach: beach })
       }
+    end
+
+    if params[:query].present?
+      @beaches = Beach.where("title ILIKE ?", "%#{params[:query]}%")
+    else
+      @beaches = Beach.all
     end
   end
 
