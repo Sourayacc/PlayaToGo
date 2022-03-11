@@ -8,7 +8,6 @@
     %>
     <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
-
     <% @beaches.each do |beach| link_to beach %>
       <%= link_to beach_path(beach), class: "text-decoration-none" do %>
         <div class="container-index-beach">
