@@ -16,7 +16,23 @@
   <body>
     <%= render 'shared/navbar' %>
      <%= render 'shared/flashes' %>
-    <%= yield %>
-
+     <div class="global-container">
+      <%= yield %>
+     </div>
   </body>
+
+<footer>
+  <div class="footer sticky" style="background-color:rgba(0, 0, 0, 0.1)">
+  <div class="footer-links">
+    <a href="https://github.com/"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> by The Capitain
+  </div>
+</div>
+</footer>
 </html>
