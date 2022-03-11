@@ -26,12 +26,12 @@ class BeachesController < ApplicationController
         lng: beach.longitude,
         info_window: render_to_string(partial: "info_window", locals: { beach: beach })
       }
+    end
 
-      if params[:query].present?
-        @beaches = Beach.where("title ILIKE ?", "%#{params[:query]}%")
-      else
-        @beaches = Beach.all
-      end
+    if params[:query].present?
+      @beaches = Beach.where("title ILIKE ?", "%#{params[:query]}%")
+    else
+      @beaches = Beach.all
     end
   end
 
