@@ -2,6 +2,20 @@ class BeachesController < ApplicationController
   before_action :set_beach, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only:  :index
 
+  # GET beaches for current user
+  def user_beaches
+    user = current_user
+    @beaches = user.beaches
+    @markers = @beaches.geocoded.map do |beach|
+      {
+        lat: beach.latitude,
+        lng: beach.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { beach: beach })
+      }
+    end
+    render :index
+  end
+
   # GET /beaches
   def index
     @beaches = Beach.all

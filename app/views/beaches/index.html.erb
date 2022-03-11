@@ -29,6 +29,11 @@
                 <p>
                   <%= beach.price %>
                 </p>
+                <p class = "form-button">
+                <% if beach.user.id == current_user.id  %>
+                <%= link_to 'Update', edit_beach_path(beach), class:"btn btn-info btn-sm" %>
+                <% end %>
+                </p>
                 </span>
               </div>
               </div>

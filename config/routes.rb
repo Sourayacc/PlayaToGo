@@ -11,4 +11,6 @@ Rails.application.routes.draw do
       patch :decline
     end
   end
+  resources :user_beaches, to: 'beaches#user_beaches'
+
 end
