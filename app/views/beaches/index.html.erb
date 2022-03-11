@@ -1,14 +1,5 @@
 <div class="container-beaches">
   <div>
-  <%= form_tag beaches_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a beach"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
     <% @beaches.each do |beach| link_to beach %>
       <%= link_to beach_path(beach), class: "text-decoration-none" do %>
         <div class="container-index-beach">
